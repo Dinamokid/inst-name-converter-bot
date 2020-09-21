@@ -1,7 +1,10 @@
 import telebot
 import logic
+from boto.s3.connection import S3Connection
 
-bot = telebot.TeleBot('Telegram bot token')
+token = S3Connection(os.environ['telegram-token'])
+
+bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
