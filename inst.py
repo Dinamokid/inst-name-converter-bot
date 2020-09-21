@@ -3,8 +3,7 @@ import logic
 import os
 from boto.s3.connection import S3Connection
 
-print(os.environ['telegram-token'])
-token = S3Connection(os.environ['telegram-token'])
+token = os.environ['telegram-token']
 
 bot = telebot.TeleBot(token)
 
