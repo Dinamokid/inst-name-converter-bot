@@ -6,7 +6,8 @@ def nick_to_id(nickname, offset=None, timeout=30):
     try:
         return resp.json()['graphql']['user']['id']
     except:
-        return "Json crush \n" + resp.text + " | " + str(resp.status_code)
+        print(resp.text + " | " + str(resp.status_code))
+        return "Json crush"
 
 def id_to_nick(user_id, offset=None, timeout=30):
     params = {'timeout': timeout, 'offset': offset}
@@ -14,4 +15,5 @@ def id_to_nick(user_id, offset=None, timeout=30):
     try:
         return resp.json()['user']['username']
     except:
-        return "Json crush \n" + resp.text + " | " + str(resp.status_code)
+        print(resp.text + " | " + str(resp.status_code))
+        return "Json crush"
